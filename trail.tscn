@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dwdv6rovalvpf"]
+
+[ext_resource type="Texture2D" uid="uid://dgtmav38wdvmj" path="res://assets/tracksLarge.png" id="1_xjhlx"]
+[ext_resource type="Script" uid="uid://wsloxdmesdr2" path="res://scripts/trail.gd" id="2_abn3g"]
+
+[node name="trail" type="Line2D" unique_id=1197169904]
+top_level = true
+texture_repeat = 2
+width = 60.0
+texture = ExtResource("1_xjhlx")
+texture_mode = 1
+joint_mode = 2
+script = ExtResource("2_abn3g")
+
+[node name="Timer" type="Timer" parent="." unique_id=519973866]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
